@@ -24,6 +24,7 @@ public class HomeController {
         return "called logger";
     }
 
+
     @GetMapping("logger2")
     public String logger2() {
         Logger logger = Logger.getLogger(String.valueOf(getClass()));
