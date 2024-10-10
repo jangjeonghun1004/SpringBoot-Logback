@@ -22,7 +22,9 @@ public class HomeController {
         log.info("INFO!!");
         log.debug("DEBUG!!");
         log.trace("TRACE!!");
-        
+
+        String logValue = "this is a log value";
+        log.info("변수 값 = {}", logValue);
         return "called logger";
     }
 
