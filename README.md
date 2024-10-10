@@ -5,7 +5,7 @@
 Logback
   - https://www.slf4j.org
   - "Logback"의 경우 "spring-boot-starter-web" 라이브러리 내부에 내장되어 있어 별도의 의존성을 추가하지 않아도 사용할 수 있습니다.
-  - "@Slf4j"을 사용하기 위해서는 "lombok"을 추가해야합니다.
+  - "@Slf4j"(SLF4J, Simple Logging Facade for Java)을 사용하기 위해서는 "lombok"을 추가해야합니다.
 
 Logback의 로그 레벨
   - ERROR: 로직 수행 중에 시스템에 심각한 문제가 발생해서 애플리케이션의 동작이 불가능 한 경우
@@ -27,6 +27,8 @@ Appender
   - DBAppender: 데이터베이스에 로그를 저장
 
 Root
-  준비중...
+  - Root 영역에서 Appender를 참조해서 로깅 레벨을 설정할 수 있다.
+  - 패키지 단위로 로깅 레벨을 설정하고 싶다면 "<logger>" 태그를 활용하면 된다.
+
 
   

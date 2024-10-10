@@ -1,0 +1,27 @@
+<configuration>
+    <!-- ConsoleAppender 설정 -->
+    <appender name="ConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %magenta([%thread]) %highlight([%-3level]) %logger{5} - %msg %n</Pattern>
+        </encoder>
+    </appender>
+
+    <!-- RollingFileAppender 설정 -->
+    <appender name="RollingFileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}  %logger{5} - %msg %n</pattern>
+        </encoder>
+        <file>/Users/jangjeonghun/logs/application.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>/Users/jangjeonghun/logs/application-%d{yyyy-MM-dd-HH-mm}.%i.log</fileNamePattern>
+            <maxHistory>2</maxHistory>
+            <maxFileSize>10MB</maxFileSize>
+            <totalSizeCap>30MB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="RollingFileAppender" level="debug"/>
+        <appender-ref ref="ConsoleAppender" level="info"/>
+    </root>
+</configuration>
